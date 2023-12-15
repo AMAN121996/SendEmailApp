@@ -1,0 +1,22 @@
+<!-- app/views/home/index.html.erb -->
+
+<h1>Welcome to SimpleEmailApp</h1>
+
+<%= form_tag send_email_path, method: :post do %>
+  <div class="form-group">
+    <%= label_tag 'recipient_email', 'Recipient Email:' %>
+    <%= text_field_tag 'recipient_email', nil, class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'subject', 'Subject:' %>
+    <%= text_field_tag 'subject', 'Subject of the email', class: 'form-control', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag 'recipient_name', 'Recipient Name:' %>
+    <%= text_field_tag 'recipient_name', nil, class: 'form-control', required: true %>
+  </div>
+
+  <%= submit_tag 'Send Email', class: 'btn btn-primary' %>
+<% end %>
